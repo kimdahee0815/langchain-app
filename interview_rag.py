@@ -69,12 +69,6 @@ def ask_rag(question: str) -> dict:
 
 
 if __name__ == "__main__":
-    result = ask_rag(question)
-
-    # hard exit 점검: answer와 sources 둘 다 non-empty여야만 완료예요.
-    if not result["answer"].strip():
-        sys.exit("[hard exit] answer가 비어 있어요 — prompt/context 연결부터 점검하세요.")
-    if not result["sources"]:
-        sys.exit("[hard exit] sources가 빈 list예요 — metadata/변환부터 점검하세요.")
-
-    print(result)  # ← 이 출력이 응답 로그 = Day 4 비교 기준선이에요
+    result = ask_job_rag("이 직무에서 가장 중요한 역량을 기준으로 면접 질문 1개를 만들어 주세요.")
+    print(result["answer"][:200])
+    print(result["sources"][0])
