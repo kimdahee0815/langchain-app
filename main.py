@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend import interview_router
+from backend import interview_router, stream_router
 from backend import agents_router
 from backend import feedback_router
 from backend import resume_router
@@ -20,6 +20,7 @@ app.include_router(agents_router.router)
 app.include_router(interview_router.router)
 app.include_router(feedback_router.router)
 app.include_router(resume_router.router)
+app.include_router(stream_router.router)
 
 @app.get("/health")
 def health_check() -> dict[str, str]:
