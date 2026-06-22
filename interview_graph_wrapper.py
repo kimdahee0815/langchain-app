@@ -4,10 +4,10 @@
     ① signature: run_interview_graph(question, thread_id)
     ② config:    {"configurable": {"thread_id": thread_id}}
     ③ output:    answer/sources 두 key 보존
-graph 본체는 interview_rag_graph.py에서 그대로 import (배선 무수정).
+graph 본체는 interview_graph.py에서 그대로 import (배선 무수정).
 """
 
-from interview_rag_graph import interview_app
+from interview_graph import interview_app
 
 
 def run_interview_graph(question: str, thread_id: str) -> dict:
